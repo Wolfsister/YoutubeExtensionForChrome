@@ -1,0 +1,29 @@
+Extension :
+
+Problématique :
+
+Lorsque l'on utilise YouTube pour écouter sa musique, il est fréquent de tomber sur des clips et devoir attendre au moins une minute avant de pouvoir écouter son morceau. Cette extension permettra à l'utilisateur de directement et automatiquement passer au début du morceau, sans avoir à regarder (et surtout écouter !) le début du clip à chaque fois. 
+
+Pour cela, l'utilisateur devra signaler que la vidéo est un clip et proposer un moment de début du clip. Ainsi, lorsqu'un autre utilisateur voudra écouter la musique, on pourra lui proposer le début du morceau grâce à la suggestion du premier utilisateur. Plus il y aura d'utilisateur, plus la base de données sera importante et meilleure l'utilisation sera pour tout le monde. On peut imaginer un système de vote sur les suggestions pour valider les suggestions et éviter qu'un utilisateur ne donne de fausses indications.
+
+Fonctionnalités :
+
+(une suggestion est lorsqu'un utilisateur nous informe que la musique X commence à Y secondes)
+
+- Ajouter une nouvelle suggestion
+	=> l'utilisateur est sur la page de la vidéo qu'il veut écouter, il clique sur l'icone du plugin, et tape les secondes (ou minutes) à laquelle le morceau commence. La suggestion est ensuite ajoutée dans les BDD locales et distantes. 
+
+- Voter pour une suggestion
+	=> l'utilisateur est sur un morceau youtube qui a commencé plus tard grâce à une suggestion d'un utilisateur. La suggestion apparaît en cliquant sur l'icône de l'extension, il peut voter positivement ou négativement pour cette suggestion.
+
+- Proposer une modification de suggestion
+	=> l'utilisateur est sur un morceau youtube qui a commencé plus tard grâce à une suggestion d'un utilisateur. La suggestion apparaît en cliquant sur l'icône de l'extension, il peut proposer une modification de cette suggestion, si par exemple il estime que cela commence quelques secondes trop tôt ou trop tard.
+
+- Ajouter une suggestion perso 
+	=> je suppose que je suis peut être le seul à vouloir commencer plus tard, (les gens peuvent vouloir voir tout le sketch par exemple, différent d'un clip). On garde donc la suggestion en local, je démarrerai la vidéo au moment que je veux, mais les autres utilisateurs la commenceront de manière classique, au début.
+
+Tips perso : 
+
+- Avoir une base de données (suffit d'enregistrer le suffixe d'URL Youtube, avec le nombre de secondes pour commencer la vidéo. Egalement avis positifs et négatifs sur la suggestion.) locale et distante : lorsque l'utilisateur fait une suggestion, on enregistre en local et en distant. Lorsque l'utilisateur regarde une vidéo, on va voir s'il y a une suggestion en local, puis en distant. Si la suggestion n'existe qu'en distant, on la copie également en local. Ainsi, on évite de faire trop d'appels serveurs.
+
+- Tout faire avec une base locale pour le moment. On verra BDD distante lorsque fonctionnalités importantes marcheront en local.
